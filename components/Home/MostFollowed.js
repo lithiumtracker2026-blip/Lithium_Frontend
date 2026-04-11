@@ -218,6 +218,7 @@ import { useEffect, useState } from "react";
 import { MOST_FOLLOWED, LITHIUM_STOCK_DETAIL } from "@/src/api/lithiumAPI";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import CardSkeleton from "@/components/CardSkeleton"
 
 const MostFollowed = () => {
   const [stockData, setStockData] = useState([]);
@@ -301,7 +302,7 @@ const MostFollowed = () => {
         </div>
       )}
 
-      {loading && <p className="text-center text-gray-500">Loading...</p>}
+      {loading && <CardSkeleton/>}
       {error && <p className="text-center text-red-500">{error}</p>}
       {!loading && !error && (
         <table className="w-full text-left text-sm font-sans">

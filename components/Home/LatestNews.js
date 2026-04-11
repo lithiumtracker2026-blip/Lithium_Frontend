@@ -384,6 +384,7 @@
 import React, { useState, useEffect } from "react";
 import Loader from "../Loader";
 import { GENERAL_NEWS } from "@/src/api/lithiumAPI";
+import CardSkeleton from "@/components/CardSkeleton"
 
 // Updated: 2026-02-15 - Using ONLY general news endpoint
 const LatestNews = () => {
@@ -452,9 +453,9 @@ const LatestNews = () => {
         <h1 className="text-[21px] cambay font-bold mb-5 border-b border-black/10 pb-2">
           Latest Lithium News
         </h1>
-        <div className="flex justify-center items-center h-32">
-          <Loader />
-        </div>
+        
+        <CardSkeleton/>
+        
       </div>
     );
   }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import CardSkeleton from "../CardSkeleton";
 
 const HomeInsiderTransactions = () => {
   const [transactions, setTransactions] = useState([]);
@@ -44,7 +45,7 @@ const HomeInsiderTransactions = () => {
   if (loading) {
     return (
       <div className="text-center py-4">
-        <div className="animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-accent mx-auto"></div>
+        <CardSkeleton/>
       </div>
     );
   }
@@ -69,7 +70,7 @@ const HomeInsiderTransactions = () => {
     <div className="overflow-x-auto custom-scrollbar-hidden">
       <table className="table-auto w-full border-collapse text-xs">
         <thead className="text-left">
-          <tr className="text-black/60">
+          <tr className="text-black/60 text-base lg:text-lg">
             <th className="border-t px-2 py-2">Country</th>
             <th className="border-t px-2 py-2">Company</th>
             <th className="border-t px-2 py-2">Ticker</th>
@@ -86,9 +87,9 @@ const HomeInsiderTransactions = () => {
           {transactions.map((transaction, index) => (
             <tr 
               key={transaction.id || index} 
-              className="text-xs hover:bg-accent/10 transition-colors"
+              className="lg:text-sm hover:bg-accent/10 transition-colors "
             >
-              <td className="border-t px-2 py-2">
+              <td className="border-t px-2 py-4">
                 <span className="text-lg" title="Canada">🇨🇦</span>
               </td>
               <td className="border-t px-2 py-2 max-w-[120px] truncate" title={transaction.company_name}>

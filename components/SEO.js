@@ -20,6 +20,12 @@ const SEO = ({ title, description, keywords, canonicalUrl }) => {
         content={canonicalUrl || "https://musical-panda-75f15d.netlify.app/"}
       />
       <link
+       rel="icon"
+       type="image/png"
+       sizes="24x24`"
+       href="/lithium-64.png"
+      />
+      <link
         rel="canonical"
         href={canonicalUrl || "https://musical-panda-75f15d.netlify.app/"}
       />

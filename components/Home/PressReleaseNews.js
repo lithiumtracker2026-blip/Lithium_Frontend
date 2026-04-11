@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router"; // For navigation
 import { PRESS_RELEASE } from "@/src/api/lithiumAPI";
-
+import CardSkeleton from "@/components/CardSkeleton"
 const PressRelease = () => {
   const router = useRouter();
   const [pressReleases, setPressReleases] = useState([]);
@@ -60,7 +60,7 @@ const PressRelease = () => {
         <h1 className="text-[21px] cambay font-bold mb-5 border-b border-black/10 pb-2">
           Lithium Company Press Release
         </h1>
-        <div className="text-center py-8">Loading press releases...</div>
+        <CardSkeleton/>
       </div>
     );
   }

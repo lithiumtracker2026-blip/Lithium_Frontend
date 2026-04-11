@@ -135,6 +135,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { STOCK_NEWS } from "@/src/api/lithiumAPI";
+import CardSkeleton from "@/components/CardSkeleton"
 
 const StockNews = () => {
   const [newsData, setNewsData] = useState([]);
@@ -203,7 +204,7 @@ const StockNews = () => {
         <h1 className="text-[21px] cambay font-bold mb-5 border-b border-black/10 pb-2">
           Lithium Stock News
         </h1>
-        <div className="text-center py-8">Loading stock news...</div>
+        <CardSkeleton/>
       </div>
     );
   }

@@ -28,20 +28,36 @@ const news = () => {
       <div className="flex justify-between flex-wrap px-3 md:px-10 lg:px-16 py-12 mt-6">
         {/* left */}
         <div className="w-full lg:w-[66%] flex flex-col space-y-20">
-          <LatestNews />
-          <PressReleaseNews />
-          <StockNews />
+          <div className="border  border-black/10 p-3 mr-2 rounded-xl">
+            <LatestNews />
+          </div>
+          <div className="border border-black/10 p-3 mr-2 rounded-xl">
+            <PressReleaseNews />
+          </div>
+          
+          
         </div>
         {/* right */}
         <div className="w-full lg:w-[26%] space-y-20">
+          
           <DailyNewsletterAd />
-          <Substacks />
-          <PopularIntradayReturn />
+          <div className="border border-black/10 p-3 mr-2 rounded-xl">
+            <Substacks />
+          </div>
+          <div className="border border-black/10 p-3 mr-2 rounded-xl">
+            <PopularIntradayReturn />
+          </div>
+          
         </div>
       </div>
 
       {/* More News Section */}
+      <div className="mx-auto px-3 md:px-10 lg:px-16 py-12 mt-6 border border-black/10  rounded-xl">
+        <StockNews />
+        
+      </div>
       <MoreNews />
+      
 
       {/* Footer Section */}
       <div className="mt-0">

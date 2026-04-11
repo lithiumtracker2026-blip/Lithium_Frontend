@@ -149,7 +149,7 @@ const MoreNews = () => {
 
   if (loading) {
     return (
-      <div className="px-3 md:px-10 lg:px-16 py-12 md:py-24 bg-secondary/10 mt-10">
+      <div className="px-3 md:px-10 lg:px-16 py-12 md:py-24 bg-secondary/10">
         <h2 className="text-[19px] md:text-[21px] font-bold cambay border-b border-gray-300 pb-2 mb-6">
           More News
         </h2>
@@ -187,7 +187,7 @@ const MoreNews = () => {
   }
 
   return (
-    <div className="px-3 md:px-10 lg:px-16 py-12 md:py-24 bg-secondary/10 mt-10">
+    <div className="px-3 md:px-10 lg:px-16 py-12 md:py-24 bg-secondary/10">
       <h2 className="text-[19px] md:text-[21px] font-bold cambay border-b border-gray-300 pb-2 mb-6">
         More News
       </h2>

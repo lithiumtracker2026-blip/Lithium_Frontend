@@ -34,16 +34,16 @@ const Hero = () => {
       <div className="absolute inset-0">
         <video
           ref={videoRef}
-          src="/HeroBG.mp4"
+          src="/Hero-3.mp4"
           autoPlay
           loop
           muted
           playsInline
           preload="metadata"
-          className="w-full h-full object-cover md:object-left pl-0 md:pl-0"
+          className="w-full h-full object-cover lg:object-fill md:object-left pl-0 md:pl-0"
         ></video>
         {/* Black overlay */}
-        <div className="absolute inset-0 bg-black opacity-70"></div>
+        <div className="absolute inset-0 bg-black opacity-30"></div>
       </div>
 
       {/* Text content */}
