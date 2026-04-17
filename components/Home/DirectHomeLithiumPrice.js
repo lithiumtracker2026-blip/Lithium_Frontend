@@ -38,7 +38,7 @@ const DirectHomeLithiumPrice = () => {
           price: parseFloat(item.price),
           price_change: parseFloat(item.price_change),
           price_change_percent: parseFloat(item.price_change_percent),
-          source: "Database API"
+          // source: "Database API"
         }));
         
         setLithiumPrices(metalPrices);
@@ -108,9 +108,7 @@ const DirectHomeLithiumPrice = () => {
     <tr className="text-sm hover:bg-accent/10" key={metalData.metal_name}>
       <td className="border-t px-4 py-2 font-sm">
         {metalData.metal_name}
-        {metalData.source && (
-          <span className="text-xs text-gray-500 ml-2">({metalData.source})</span>
-        )}
+        
       </td>
       <td className="border-t px-4 py-3">${formatValue(metalData.price)}</td>
       <td
@@ -131,19 +129,7 @@ const DirectHomeLithiumPrice = () => {
       >
         {formatValue(metalData.price_change_percent)}%
       </td>
-      <td className="border-t px-4 py-3 text-center">
-        <a
-          href={metalData.metal_name === "Lithium" 
-            ? "/api/lithium-prices" 
-            : "/api/lithium-prices"
-          }
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-black/70 hover:text-black/60"
-        >
-          <FaLink size={18} />
-        </a>
-      </td>
+
     </tr>
   );
 
@@ -173,7 +159,6 @@ const DirectHomeLithiumPrice = () => {
             <th className=" px-4 py-2">Price (USD/lb)</th>
             <th className=" px-4 py-2">Change</th>
             <th className=" px-4 py-2">% Change</th>
-            <th className=" px-4 py-2">Source</th>
           </tr>
         </thead>
         <tbody>

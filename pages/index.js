@@ -30,33 +30,38 @@ const home = () => {
         keywords="Lithium prices, Lithium news, Lithium market analysis"
         canonicalUrl="https://musical-panda-75f15d.netlify.app/"
       />
-
       <Navbar />
-
       <div className="pt-20 w-full">
         {/* Marquee Section */}
         <div className="mt-2 w-full">
           <StocksMarquee />
         </div>
-
         <Hero />
-
         {/* --- MASTER GRID (Main Content + Sidebar) --- */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 px-4 md:px-10 lg:px-12 py-8 items-start w-full mx-auto">
-          
+        <div className="grid grid-cols-1 lg:grid-cols-12  gap-10 px-4 md:px-10 lg:px-12 py-8 items-start w-full mx-auto">
           {/* LEFT/MIDDLE COLUMN (Main Feed - Takes 9/12 columns) */}
           <div className="lg:col-span-9 flex flex-col items-stretch space-y-12 w-full">
             
             {/* Prices Section */}
-            <div className="w-full block border border-black/10 p-3 mr-2 rounded-xl">
-              <h1 className="text-[21px] cambay font-bold mb-3  border-black/10 pb-1">
-                Prices
-              </h1>
-              <div className="w-full border border-t-2 border-black/10 p-3 mr-2 rounded-xl">
-                <DirectHomeLithiumPrice />
+            <div className="grid grid-cols-1 md:grid-cols-9 gap-4">
+                <div className="w-full border border-black/10 p-3 mr-2 rounded-xl md:col-span-3 self-start">
+                  <h1 className="text-[21px] cambay font-bold mb-3 border-b border-black/10 pb-1">
+                    Lithium Price Chart
+                  </h1>
+                  <div className="rounded-lg overflow-hidden border border-gray-100 shadow-sm w-full">
+                    <TVLithiumCFD />
+                  </div>
               </div>
-            </div>
 
+                <div className="w-full block border border-black/10 p-3 mr-2 rounded-xl md:col-span-6">
+                  <h1 className="text-[21px] cambay font-bold mb-3  border-black/10 pb-1">
+                    Prices
+                  </h1>
+                  <div className="w-full border border-t-2 border-black/10 p-3 mr-2 rounded-xl">
+                    <DirectHomeLithiumPrice />
+                  </div>
+                </div>
+            </div>
             {/* Transactions Section */}
             <div className="w-full block border border-black/10 p-3 mr-2 rounded-xl">
               <div className="flex justify-between items-center mb-3   border-black/10 pb-1">
@@ -80,7 +85,7 @@ const home = () => {
               <div className="w-full block border border-black/10 p-3 mr-2 rounded-xl">
                 <PressReleaseNews />
               </div>
-              <div className="border border-black/10 p-3 mr-2 rounded-xl w-full">
+              <div className="border border-black/10 p-3 mr-2 rounded-xl w-full lg:row-start-1 lg:row-end-1">
                 <StockNews />
               </div>
             </div>
@@ -109,16 +114,8 @@ const home = () => {
                 </h1>
                 <TVLithium />
               </div>
-
-              <div className="w-full border border-black/10 p-3 mr-2 rounded-xl">
-                <h1 className="text-[21px] cambay font-bold mb-3 border-b border-black/10 pb-1">
-                  Lithium Price Chart
-                </h1>
-                <div className="rounded-lg overflow-hidden border border-gray-100 shadow-sm w-full">
-                  <TVLithiumCFD />
-                </div>
-              </div>
           </div>
+          
         </div>
 
         {/* --- FULL WIDTH BREAKOUTS (Bottom Section) --- */}

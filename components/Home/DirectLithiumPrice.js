@@ -104,55 +104,68 @@ const DirectLithiumPrice = () => {
         Live Lithium Price
       </h2>
 
+      
       {/* Single row with all data */}
-      <div className="bg-accent/30 p-4 md:p-3 lg:p-4 w-full border border-accent/30 rounded-md">
-        <div className="flex items-center justify-between gap-2">
-          {/* Logo */}
+      <div className="bg-accent/30 p-4 md:p-3 lg:p-3 w-full border border-accent/30 rounded-md">
+        
+        {/* Logo: visible on mobile/md, hidden on lg */}
+        <div className="flex items-center justify-between gap-3 lg:hidden mb-0">
           <div className="flex-shrink-0">
             <img
-              className="w-20 h-10 md:w-16 md:h-8 lg:w-20 lg:h-10 object-contain"
+              className="w-20 h-10 md:w-16 md:h-8 object-contain"
               src="/logo.jpg"
               alt="Lithium Tracker Logo"
             />
           </div>
-
-          {/* Price Data */}
-          <div className="flex-1 grid grid-cols-3 gap-2 text-center">
-            {/* Price */}
+          <div className="flex-1 grid grid-cols-3 gap-1 text-center">
             <div>
-              <p className="text-[10px] md:text-[9px] lg:text-[10px] text-black1/60 font-medium mb-1">Price</p>
-              <p className="text-sm md:text-xs lg:text-sm font-bold text-green">
-                ¥{formattedPrice}
-              </p>
+              <p className="text-[10px] text-black1/60 font-medium mb-1">Price</p>
+              <p className="text-xs font-bold text-green">¥{formattedPrice}</p>
             </div>
-
-            {/* Change */}
             <div>
-              <p className="text-[10px] md:text-[9px] lg:text-[10px] text-black1/60 font-medium mb-1">Change</p>
-              <p
-                className={`text-sm md:text-xs lg:text-sm font-bold ${
-                  changeValue >= 0 ? "text-green-600" : "text-red-500"
-                }`}
-              >
+              <p className="text-[10px] text-black1/60 font-medium mb-1">Change</p>
+              <p className={`text-xs font-bold ${changeValue >= 0 ? "text-green-600" : "text-red-500"}`}>
                 {changeValue >= 0 ? `¥+${formattedChange}` : `¥-${formattedChange}`}
               </p>
             </div>
-
-            {/* % Change */}
             <div>
-              <p className="text-[10px] md:text-[9px] lg:text-[10px] text-black1/60 font-medium mb-1">% Change</p>
-              <p
-                className={`text-sm md:text-xs lg:text-sm font-bold ${
-                  parseFloat(formattedPercent) >= 0 ? "text-green-600" : "text-red-500"
-                }`}
-              >
-                {parseFloat(formattedPercent) >= 0
-                  ? `+${formattedPercent}%`
-                  : `${formattedPercent}%`}
+              <p className="text-[10px] text-black1/60 font-medium mb-1">% Change</p>
+              <p className={`text-xs font-bold ${parseFloat(formattedPercent) >= 0 ? "text-green-600" : "text-red-500"}`}>
+                {parseFloat(formattedPercent) >= 0 ? `+${formattedPercent}%` : `${formattedPercent}%`}
               </p>
             </div>
           </div>
         </div>
+
+        {/* lg-only layout: logo centered + 2-col grid below */}
+        <div className="hidden lg:flex lg:flex-col lg:gap-2 lg:items-center">
+          <img
+            className="w-14 h-7 object-contain"
+            src="/logo.jpg"
+            alt="Lithium Tracker Logo"
+          />
+          {/* Price on its own full row */}
+          <div className="w-full text-center">
+            <p className="text-[10px] text-black1/60 font-medium mb-0.5">Price</p>
+            <p className="text-sm font-bold text-green">¥{formattedPrice}</p>
+          </div>
+          {/* Change + % Change side by side */}
+          <div className="w-full grid grid-cols-2 gap-2 text-center">
+            <div>
+              <p className="text-[10px] text-black1/60 font-medium mb-0.5">Change</p>
+              <p className={`text-xs font-bold ${changeValue >= 0 ? "text-green-600" : "text-red-500"}`}>
+                {changeValue >= 0 ? `¥+${formattedChange}` : `¥-${formattedChange}`}
+              </p>
+            </div>
+            <div>
+              <p className="text-[10px] text-black1/60 font-medium mb-0.5">% Change</p>
+              <p className={`text-xs font-bold ${parseFloat(formattedPercent) >= 0 ? "text-green-600" : "text-red-500"}`}>
+                {parseFloat(formattedPercent) >= 0 ? `+${formattedPercent}%` : `${formattedPercent}%`}
+              </p>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div className="mt-2 text-start">
