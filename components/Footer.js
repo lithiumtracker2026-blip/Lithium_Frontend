@@ -22,13 +22,6 @@ const Footer = () => {
                 looking for the next big opportunity in Lithium. We're here to help.
                 Sign up to receive our best insights and updates every week.
               </p>
-              <button
-                type="submit"
-                className="h-10 w-fit px-6 rounded-sm bg-accent text-white font-medium hover:bg-accent/90 frank text-[14px]"
-                onClick={() => router.push("/auth/signup")}
-              >
-                Sign Up For Free
-              </button>
             </div>
 
             {/* Image Content */}

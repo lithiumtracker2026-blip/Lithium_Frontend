@@ -344,7 +344,7 @@ const MostFollowed = () => {
         </table>
       )}
       {/* View More Link */}
-      <div className="mt-4 text-left">
+      {/* <div className="mt-4 text-left">
         <a
           href="/investments"
           className="inline-flex items-center text-sm font-bold text-accent hover:underline"
@@ -352,7 +352,7 @@ const MostFollowed = () => {
           View More
           <span className="ml-1">&gt;</span>
         </a>
-      </div>
+      </div> */}
     </div>
   );
 };

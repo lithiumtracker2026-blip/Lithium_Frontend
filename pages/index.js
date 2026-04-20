@@ -43,25 +43,25 @@ const home = () => {
           <div className="lg:col-span-9 flex flex-col items-stretch space-y-12 w-full">
             
             {/* Prices Section */}
-            <div className="grid grid-cols-1 md:grid-cols-9 gap-4">
-                <div className="w-full border border-black/10 p-3 mr-2 rounded-xl md:col-span-3 self-start">
+
+                {/* <div className="w-full border border-black/10 p-3 mr-2 rounded-xl md:col-span-3 self-start">
                   <h1 className="text-[21px] cambay font-bold mb-3 border-b border-black/10 pb-1">
                     Lithium Price Chart
                   </h1>
                   <div className="rounded-lg overflow-hidden border border-gray-100 shadow-sm w-full">
                     <TVLithiumCFD />
                   </div>
-              </div>
+                </div> */}
 
-                <div className="w-full block border border-black/10 p-3 mr-2 rounded-xl md:col-span-6">
-                  <h1 className="text-[21px] cambay font-bold mb-3  border-black/10 pb-1">
-                    Prices
-                  </h1>
-                  <div className="w-full border border-t-2 border-black/10 p-3 mr-2 rounded-xl">
-                    <DirectHomeLithiumPrice />
-                  </div>
-                </div>
+            <div className="w-full block border border-black/10 p-3 mr-2 rounded-xl md:col-span-6">
+              <h1 className="text-[21px] cambay font-bold mb-3  border-black/10 pb-1">
+                Prices
+              </h1>
+              <div className="w-full border border-t-2 border-black/10 p-3 mr-2 rounded-xl">
+                <DirectHomeLithiumPrice />
+              </div>
             </div>
+            
             {/* Transactions Section */}
             <div className="w-full block border border-black/10 p-3 mr-2 rounded-xl">
               <div className="flex justify-between items-center mb-3   border-black/10 pb-1">
@@ -82,20 +82,35 @@ const home = () => {
               <div className="w-full block border border-black/10 p-3 mr-2 rounded-xl">
                 <LatestNews />
               </div>
-              <div className="w-full block border border-black/10 p-3 mr-2 rounded-xl">
-                <PressReleaseNews />
-              </div>
-              <div className="border border-black/10 p-3 mr-2 rounded-xl w-full lg:row-start-1 lg:row-end-1">
+              
+              {/* <div className="border border-black/10 p-3 mr-2 rounded-xl w-full lg:row-start-1 lg:row-end-1">
                 <StockNews />
-              </div>
+              </div> */}
             </div>
           </div>
 
           {/* RIGHT SIDEBAR (Takes 3/12 columns) */}
           <div className="lg:col-span-3 flex flex-col items-stretch space-y-8 w-full ">
-              <div className="border border-black/10 p-3 mr-2 rounded-xl">
-                <Substacks />
+
+              <div className="w-full border border-black/10 p-3 mr-2 rounded-xl md:col-span-3 self-start">
+                  <h1 className="text-[21px] cambay font-bold mb-3 border-b border-black/10 pb-1">
+                    Lithium Price Chart
+                  </h1>
+                  <div className="rounded-lg overflow-hidden border border-gray-100 shadow-sm w-full">
+                    <TVLithiumCFD />
+                  </div>
               </div>
+
+              <div className="w-full border border-black/10 p-3 mr-2 rounded-xl">
+                <h1 className="text-[21px] cambay font-bold mb-3 border-b border-black/10 pb-1">
+                  Lithium Futures
+                </h1>
+                <TVLithium />
+              </div>
+              
+              {/* <div className="border border-black/10 p-3 mr-2 rounded-xl">
+                <Substacks />
+              </div> */}
               
               <DailyNewsletterAd />
               <div className="border border-black/10 p-3 mr-2 rounded-xl">
@@ -103,26 +118,28 @@ const home = () => {
               </div>
               
               <PopularIntradayReturn />
-              <div className="border border-black/10 p-3 mr-2 rounded-xl">
-                <PopularTools />
-              </div>
               
               
-              <div className="w-full border border-black/10 p-3 mr-2 rounded-xl">
-                <h1 className="text-[21px] cambay font-bold mb-3 border-b border-black/10 pb-1">
-                  Lithium Futures
-                </h1>
-                <TVLithium />
-              </div>
           </div>
           
         </div>
 
         {/* --- FULL WIDTH BREAKOUTS (Bottom Section) --- */}
         <div className="px-4 md:px-10 lg:px-12 w-full space-y-16">
-          {/* <div className="border-t border-black/10 pt-10 w-full">
+          <div className="w-full block border border-black/10 p-3 mr-2 rounded-xl">
+              <PressReleaseNews />
+          </div>
+          <div className="border p-3 mr-2 rounded-xl border-black/10 pt-10 w-full">
             <StockNews />
-          </div> */}
+          </div>
+
+          <div className="border border-black/10 p-3 mr-2 rounded-xl">
+            <PopularTools />
+          </div>
+
+          <div className="border border-black/10 p-3 mr-2 rounded-xl">
+            <Substacks />
+          </div>
 
           <div className="border border-black/10 p-3 mr-2 rounded-xl pt-10 w-full">
             <MostPopularNews />
