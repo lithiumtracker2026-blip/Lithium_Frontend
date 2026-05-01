@@ -1,14 +1,4 @@
-import { Pool } from 'pg';
-
-// Database connection
-const pool = new Pool({
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  database: process.env.DB_NAME,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
-});
+import { query } from '../../lib/database';
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
@@ -19,7 +9,7 @@ export default async function handler(req, res) {
     console.log('Fetching CME lithium spot price from database...');
     
     // Query the database for the latest CME lithium spot price
-    const query = `
+    const sqlQuery = `
       SELECT globex_code, last_price, price_change, price_change_percent, 
              volume, is_decrease, source, scraped_at
       FROM api_app_cmecopperspot 
@@ -27,7 +17,7 @@ export default async function handler(req, res) {
       LIMIT 1;
     `;
     
-    const result = await pool.query(query);
+    const result = await query(sqlQuery);
     
     if (result.rows.length === 0) {
       console.log('No CME lithium spot price found in database');

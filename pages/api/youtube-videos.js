@@ -1,14 +1,4 @@
-import { Pool } from 'pg';
-
-// Database configuration
-const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: process.env.DB_PORT,
-  ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false,
-});
+import { query as dbQuery } from '../../lib/database';
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
@@ -48,7 +38,7 @@ export default async function handler(req, res) {
       params.push(parseInt(limit));
     }
 
-    const result = await pool.query(query, params);
+    const result = await dbQuery(query, params);
     
     const videos = result.rows.map(row => ({
       id: row.id,
@@ -73,7 +63,7 @@ export default async function handler(req, res) {
       GROUP BY video_category 
       ORDER BY video_category
     `;
-    const countResult = await pool.query(countQuery);
+    const countResult = await dbQuery(countQuery);
     const categoryCounts = {};
     countResult.rows.forEach(row => {
       categoryCounts[row.video_category] = parseInt(row.count);

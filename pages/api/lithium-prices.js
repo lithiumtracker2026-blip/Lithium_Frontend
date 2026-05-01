@@ -1,14 +1,4 @@
-import { Pool } from 'pg';
-
-// Database connection
-const pool = new Pool({
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  database: process.env.DB_NAME,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
-});
+import { query } from '../../lib/database';
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
@@ -19,14 +9,14 @@ export default async function handler(req, res) {
     console.log('Fetching metal prices from database...');
     
     // Query the database for metal prices
-    const query = `
+    const sqlQuery = `
       SELECT metal_name, symbol, price, price_change, price_change_percent, 
              currency, exchange, last_updated, created_at
       FROM api_app_metalprices 
       ORDER BY metal_name;
     `;
     
-    const result = await pool.query(query);
+    const result = await query(sqlQuery);
     
     if (result.rows.length === 0) {
       console.log('No metal prices found in database, returning fallback data');
