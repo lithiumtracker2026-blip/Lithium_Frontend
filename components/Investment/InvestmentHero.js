@@ -64,9 +64,9 @@ const InvestmentHero = () => {
 
             <p className="text-sm md:text-base mb-10">
               Discover the potential of Lithium investments through our
-              comprehensive range of investment options. From physical Lithium to
-              ETFs and mining stocks, we offer diverse ways to incorporate this
-              precious metal into your portfolio.
+              comprehensive range of investment options. From ETFs and mining
+              stocks to junior explorers, we offer diverse ways to gain exposure
+              to this critical industrial metal and the global energy transition.
             </p>
 
             <div className="text-xs text-gray-300">

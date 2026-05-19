@@ -23,7 +23,7 @@ const RefineryCapacity = () => {
         </p>
 
         {/* Stat Band */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-bdr rounded-lg overflow-hidden my-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-bdr rounded-lg overflow-hidden my-4">
           <div className=" bg-ink p-4 text-center">
             <p className=" text-xl font-medium text-red leading-none mb-1">~300k t</p>
             <p className="text-[10px] font-semibold uppercase tracking-wider text-muted">Peak capacity (2023)</p>
@@ -34,14 +34,6 @@ const RefineryCapacity = () => {
             <p className=" text-xl font-medium text-amber-600 leading-none mb-1">~$10k–$11k</p>
             <p className="text-[10px] font-semibold uppercase tracking-wider text-muted">Avg cash cost</p>
             <p className="text-xs text-ink3 mt-0.5">LCE/t · Most operations</p>
-          </div>
-
-          <div className="bg-ink p-4 text-center">
-            <p className=" text-xl font-medium text-ink leading-none mb-1">
-              —<LiveDot />
-            </p>
-            <p className="text-[10px] font-semibold uppercase tracking-wider text-muted">Est. capacity below cost</p>
-            <p className="text-xs text-ink3 mt-0.5">At current LCE spot · SMM</p>
           </div>
 
           <div className="bg-ink p-4 text-center">

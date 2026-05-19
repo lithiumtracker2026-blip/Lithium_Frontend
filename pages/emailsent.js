@@ -13,7 +13,7 @@ const EmailSent = () => {
         title="Email Sent - Confirmation & Next Steps"
         description="Your email has been sent successfully. Check your inbox for confirmation and further instructions."
         keywords="email sent, confirmation, inbox, message delivered, email success, verification email, next steps"
-        canonicalUrl="https://musical-panda-75f15d.netlify.app/emailsent"
+        canonicalUrl="https://www.lithiumtracker.com/emailsent"
       />
 
       <main className="flex-grow mt-16">

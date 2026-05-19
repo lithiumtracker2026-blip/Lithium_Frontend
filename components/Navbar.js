@@ -211,8 +211,8 @@ const Navbar = () => {
       <div className="container mx-auto px-4 xl:px-10 py-3 flex justify-between items-center">
         {/* Logo */}
         <Image
-          src="/logo.jpg"
-          alt="Logo"
+          src="/Lithium_Tracker_logo.png"
+          alt="Lithium Tracker"
           width={140}
           height={50}
           className="cursor-pointer xl:ml-7"

@@ -25,10 +25,10 @@ const home = () => {
   return (
     <div className="bg-white min-h-screen w-full overflow-x-hidden">
       <SEO
-        title="Lithium Tracker - Real-time News, Prices & Analysis"
-        description="Stay ahead with real-time Lithium market news, price updates, and in-depth analysis."
-        keywords="Lithium prices, Lithium news, Lithium market analysis"
-        canonicalUrl="https://musical-panda-75f15d.netlify.app/"
+        title="Lithium Price Today: LCE, Spodumene & Hydroxide Charts | Lithium Tracker"
+        description="Track live lithium carbonate (LCE), spodumene (SC6), and lithium hydroxide prices. Real-time charts, supply & demand data, insider transactions, and market news."
+        keywords="lithium price today, LCE price, spodumene price, lithium hydroxide price, lithium market, lithium tracker"
+        canonicalUrl="https://www.lithiumtracker.com/"
       />
       <Navbar />
       <div className="pt-20 w-full">
@@ -66,7 +66,7 @@ const home = () => {
             <div className="w-full block border border-black/10 p-3 mr-2 rounded-xl">
               <div className="flex justify-between items-center mb-3   border-black/10 pb-1">
                 <h1 className="text-[21px] cambay font-bold">
-                  Recent Canadian Company Insider Transactions
+                  Recent Insider Transactions
                 </h1>
                 <a href="/investments" className="text-sm text-accent font-semibold hover:underline transition-colors">
                   view all

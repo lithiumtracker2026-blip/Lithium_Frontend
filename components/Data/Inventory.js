@@ -47,17 +47,7 @@ export default function Inventory() {
         </p>
 
         {/* Stat Band */}
-        <div className="grid md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white border rounded-lg p-4 shadow-sm text-center">
-            <p className="text-amber-600 text-xl font-bold">—</p>
-            <p className="text-sm font-medium">Wuxi LiCO₃ stocks</p>
-            <p className="text-xs text-gray-500">Tonnes · Latest weekly</p>
-          </div>
-          <div className="bg-white border rounded-lg p-4 shadow-sm text-center">
-            <p className="text-xl font-bold">—</p>
-            <p className="text-sm font-medium">8-week trend</p>
-            <p className="text-xs text-gray-500">Direction vs prior 8 weeks</p>
-          </div>
+        <div className="grid md:grid-cols-2 gap-6 mb-8">
           <div className="bg-white border rounded-lg p-4 shadow-sm text-center">
             <p className="text-xl font-bold">~115k t</p>
             <p className="text-sm font-medium">2024 peak</p>

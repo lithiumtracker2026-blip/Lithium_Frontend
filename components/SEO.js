@@ -13,27 +13,26 @@ const SEO = ({ title, description, keywords, canonicalUrl }) => {
       <meta property="og:type" content="website" />
       <meta
         property="og:image"
-        content="https://musical-panda-75f15d.netlify.app/_next/image?url=%2Flogo.jpg&w=128&q=75"
+        content="https://www.lithiumtracker.com/Lithium_Tracker_logo.png"
       />
       <meta
         property="og:url"
-        content={canonicalUrl || "https://musical-panda-75f15d.netlify.app/"}
+        content={canonicalUrl || "https://www.lithiumtracker.com/"}
       />
       <link
-       rel="icon"
-       type="image/png"
-       sizes="24x24`"
-       href="/lithium-64.png"
+        rel="icon"
+        type="image/png"
+        href="/Lithium_Tracker_icon.png"
       />
       <link
         rel="canonical"
-        href={canonicalUrl || "https://musical-panda-75f15d.netlify.app/"}
+        href={canonicalUrl || "https://www.lithiumtracker.com/"}
       />
       <script type="application/ld+json">
         {JSON.stringify({
-          name: "Platinum Tracker",
-          url: "https://musical-panda-75f15d.netlify.app/",
-          logo: "https://musical-panda-75f15d.netlify.app/_next/image?url=%2Flogo.jpg&w=128&q=75",
+          name: "Lithium Tracker",
+          url: "https://www.lithiumtracker.com/",
+          logo: "https://www.lithiumtracker.com/Lithium_Tracker_logo.png",
           description,
         })}
       </script>

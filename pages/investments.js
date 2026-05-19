@@ -111,10 +111,10 @@ const investments = ({ stockData }) => {
   return (
     <div>
       <SEO
-        title="Lithium Investment Insights - Market Trends & Stock Analysis"
-        description="Explore in-depth Lithium investment insights, stock analysis, and the latest market trends. Stay informed about financial updates, ETF holdings, insider transactions, and stock screening tools to make better investment decisions."
-        keywords="Lithium investment insights, stock market trends, ETF holdings, stock analysis, insider transactions, stock screener, market updates, investment strategies, Lithium investments"
-        canonicalUrl="https://musical-panda-75f15d.netlify.app/investments"
+        title="Lithium ETFs, Stocks & Insider Transactions | Lithium Tracker"
+        description="Screen lithium stocks, track ETF trust holdings, monitor insider transactions, and explore lithium mining assets. Tools for investors navigating the lithium market."
+        keywords="lithium stocks, lithium ETFs, lithium insider transactions, lithium stock screener, lithium mining stocks, lithium investment"
+        canonicalUrl="https://www.lithiumtracker.com/investments"
       />
 
       <Navbar />

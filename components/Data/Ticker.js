@@ -7,7 +7,7 @@ const TICKER_ITEMS = [
   { label: "SQM",                 value: "",                       change: "▼ −68% ATH", type: "dn" },
   { label: "SC6→LCE SPREAD",      value: "+$3,880/t refiner margin", change: "▲",         type: "up" },
   { label: "MARKET STATUS",       value: "OVERSUPPLY",             change: "~40k t LCE/yr surplus", type: "dn" },
-  { label: "UPDATED",             value: "Apr 14 2026",            change: "",            type: null },
+  { label: "UPDATED",             value: "May 19 2026",            change: "",            type: null },
 ];
 
 const TickerItem = ({ label, value, change, type }) => (

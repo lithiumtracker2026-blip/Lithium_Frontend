@@ -173,7 +173,7 @@ const PressReleasePage = () => {
         title="Press Release - Latest News & Updates"
         description="Read the latest press releases and stay informed with important news and updates from the industry."
         keywords="press release, latest news, industry updates, company announcements, financial news, market insights"
-        canonicalUrl="https://musical-panda-75f15d.netlify.app/press-release"
+        canonicalUrl="https://www.lithiumtracker.com/press-release"
       />
 
       <Navbar />

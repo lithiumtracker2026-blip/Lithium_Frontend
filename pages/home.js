@@ -47,7 +47,7 @@ const home = () => {
           <div>
             <div className="flex justify-between items-center mb-3 border-b border-black/10 pb-1">
               <h1 className="text-[21px] cambay font-bold">
-                Recent Canadian Company Insider Transactions
+                Recent Insider Transactions
               </h1>
               <a 
                 href="/investments" 

@@ -1,26 +1,24 @@
 import React from "react";
 import Footer2 from "./Footer2";
-import { useRouter } from "next/router";
 
 const Footer = () => {
-  const router = useRouter();
   return (
     <footer className="relative w-full h-fit bg-gray-900">
-      {/* Footer Content */}
-      <div className="w-full text-white md:px-4 bg-gray-900 relative container mx-auto px-4 lg:px-10 py-10 h-full flex flex-col lg:flex-row items-center justify-between">
-        <div className="lg:w-[96%] w-full flex flex-col mx-auto text-center px-3 space-y-4">
-          {/* Main Content */}
-          <div className="container mx-auto flex flex-col justify-between lg:flex-row">
+      {/* Main Footer Content */}
+      <div className="w-full text-white bg-gray-900 relative container mx-auto px-4 md:px-4 lg:px-10 py-10">
+        <div className="lg:w-[96%] w-full flex flex-col mx-auto px-3 space-y-10">
+
+          {/* Top row: newsletter + mockup */}
+          <div className="flex flex-col justify-between lg:flex-row">
             {/* Text Content */}
             <div className="text-start lg:w-1/2 flex flex-col justify-center">
               <h1 className="text-2xl sm:text-[1.5rem] md:text-4xl font-semibold mb-6 md:leading-14 frank">
-                Everything You Need to Navigate the Lithium Market – All in One
-                Place
+                Everything You Need to Navigate the Lithium Market – All in One Place
               </h1>
               <p className="text-xs sm:text-[13px] md:text-[14.5px] mb-8 text-white/70 leading-5 font-normal">
-                With demand for clean energy on the rise, many investors are
-                looking for the next big opportunity in Lithium. We're here to help.
-                Sign up to receive our best insights and updates every week.
+                Lithium is the cornerstone of the global energy transition — powering EV batteries,
+                grid storage, and the shift away from fossil fuels. Sign up to receive
+                data-driven insights, price updates, and market analysis every week.
               </p>
             </div>
 

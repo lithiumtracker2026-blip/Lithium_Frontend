@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import React from "react";
+import Head from "next/head";
 import DataHero from "@/components/Data/DataHero";
 import Ticker from "@/components/Data/Ticker"
 import Prices from "@/components/Data/Prices";
@@ -23,11 +24,24 @@ const Data = () => {
   return (
     <div className="bg-white min-h-screen">
       <SEO
-        title="Lithium Market Data - Price Trends, Supply & Demand Insights"
-        description="Access comprehensive Lithium market data, including price trends, supply and demand metrics, and industry analysis. Our detailed datasets provide the insights you need for informed decision-making in the Lithium market."
-        keywords="Lithium market data, price trends, Lithium supply and demand, industry analysis, Lithium research, market insights, Lithium and Lithium Alloys, data analytics"
-        canonicalUrl="https://musical-panda-75f15d.netlify.app/data"
+        title="Lithium Price Today: LCE, Spodumene & Hydroxide Charts & Data"
+        description="Comprehensive lithium market data: LCE spot prices, spodumene (SC6) benchmarks, hydroxide pricing, supply & demand balances, refinery capacity, and inventory levels."
+        keywords="lithium price data, LCE spot price, spodumene SC6 price, lithium hydroxide, lithium supply demand, lithium inventory, lithium market data"
+        canonicalUrl="https://www.lithiumtracker.com/data"
       />
+      <Head>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Dataset",
+          "name": "Lithium Market Data — Prices, Supply & Demand",
+          "description": "Comprehensive lithium market dataset covering LCE spot prices, spodumene (SC6) benchmarks, lithium hydroxide pricing, supply and demand balances, refinery capacity utilisation, and inventory levels.",
+          "url": "https://www.lithiumtracker.com/data",
+          "keywords": ["lithium price", "LCE price", "spodumene SC6", "lithium hydroxide", "lithium supply demand", "lithium inventory"],
+          "creator": { "@type": "Organization", "name": "Lithium Tracker", "url": "https://www.lithiumtracker.com" },
+          "license": "https://www.lithiumtracker.com/",
+          "isAccessibleForFree": true
+        })}</script>
+      </Head>
       
       <Navbar />
       <div className="pt-20 ">
