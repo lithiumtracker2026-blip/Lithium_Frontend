@@ -13,7 +13,7 @@ function LithiumCFDTradingViewWidget() {
     script.innerHTML = `
         {
           "autosize": true,
-          "symbol": "COMEX:LI1!",
+          "symbol": "AMEX:LIT",
           "interval": "D",
           "timezone": "Etc/UTC",
           "theme": "light",

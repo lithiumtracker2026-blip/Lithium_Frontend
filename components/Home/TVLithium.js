@@ -13,7 +13,7 @@ function LithiumTradingViewWidget() {
     script.innerHTML = `
         {
           "autosize": true,
-          "symbol": "NASDAQ:LTHM",
+          "symbol": "COMEX:LTH1!",
           "interval": "D",
           "timezone": "Etc/UTC",
           "theme": "light",
