@@ -36,7 +36,7 @@ function LithiumCFDTradingViewWidget() {
   }, []);
 
   return (
-    <div className="tradingview-widget-container" style={{ height: "400px", width: "100%" }}>
+    <div className="tradingview-widget-container" style={{ height: "250px", width: "100%" }}>
       <div className="tradingview-widget-container__widget" ref={container} style={{ height: "calc(100% - 32px)", width: "100%" }}></div>
       <div className="tradingview-widget-copyright">
         <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
