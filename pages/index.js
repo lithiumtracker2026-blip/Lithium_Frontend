@@ -9,7 +9,6 @@ import StayAhead from "@/components/Home/StayAhead";
 import PressReleaseNews from "@/components/Home/PressReleaseNews";
 import PopularTools from "@/components/Home/PopularTools";
 import MostPopularNews from "@/components/Home/MostPopularNews";
-import Substacks from "@/components/Home/Substacks";
 import DailyNewsletterAd from "@/components/Home/DailyNewsletterAd";
 import Footer from "@/components/Footer";
 import TVLithiumCFD from "@/components/Home/TVLithiumCFD";
@@ -130,10 +129,6 @@ const home = () => {
 
           <div className="border border-black/10 p-3 mr-2 rounded-xl">
             <PopularTools />
-          </div>
-
-          <div className="border border-black/10 p-3 mr-2 rounded-xl">
-            <Substacks />
           </div>
 
           <div className="border border-black/10 p-3 mr-2 rounded-xl pt-10 w-full">
