@@ -168,6 +168,7 @@ import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import { FaBars, FaTimes, FaUserCircle } from "react-icons/fa";
 import { GetUserData } from "@/src/utils/GetUserData";
+import NetworkBar from "@/components/NetworkBar";
 
 const Navbar = () => {
   const router = useRouter();
@@ -207,7 +208,8 @@ const Navbar = () => {
   // }
 
   return (
-    <div className="bg-white border-b shadow fixed top-0 left-0 w-full z-50">
+    <div className="bg-white shadow fixed top-0 left-0 w-full z-50">
+      <div className="border-b border-black/[0.08]">
       <div className="container mx-auto px-4 xl:px-10 py-3 flex justify-between items-center">
         {/* Logo */}
         <Image
@@ -271,6 +273,10 @@ const Navbar = () => {
           />
         </div>
       </div>
+      </div>{/* end border-b wrapper */}
+
+      {/* Network Bar */}
+      <NetworkBar />
 
       {/* Mobile Menu (Visible below xl) */}
       {menuOpen && (

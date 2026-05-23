@@ -1,5 +1,6 @@
 import React from "react";
 import Footer2 from "./Footer2";
+import TrackerNetworkSection from "./TrackerNetworkSection";
 
 const Footer = () => {
   return (
@@ -33,6 +34,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <TrackerNetworkSection />
       <Footer2 />
     </footer>
   );

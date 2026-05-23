@@ -44,7 +44,7 @@ const Data = () => {
       </Head>
       
       <Navbar />
-      <div className="pt-20 ">
+      <div className="pt-28 ">
         <Ticker/>
       </div>
 
