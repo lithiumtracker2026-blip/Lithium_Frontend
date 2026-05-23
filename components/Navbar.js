@@ -209,8 +209,8 @@ const Navbar = () => {
 
   return (
     <div className="bg-white shadow fixed top-0 left-0 w-full z-50">
-      <div className="border-b border-black/[0.08]">
-      <div className="container mx-auto px-4 xl:px-10 py-3 flex justify-between items-center">
+      {/* Main nav row */}
+      <div className="border-b border-gray-200 container mx-auto px-4 xl:px-10 py-3 flex justify-between items-center">
         {/* Logo */}
         <Image
           src="/Lithium_Tracker_logo.png"
@@ -246,23 +246,6 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Desktop Buttons (Visible after xl) */}
-        {/* {isLoggedIn ? (
-          <button
-            className="text-2xl hidden xl:block text-primary py-3 hover:text-accent/90"
-            onClick={() => navigateTo("/dashboard")}
-          >
-            <FaUserCircle />
-          </button>
-        ) : (
-          <button
-            className="bg-accent hidden xl:block text-white px-5 py-2 rounded-sm hover:bg-accent/90"
-            onClick={() => navigateTo("/auth/login")}
-          >
-            Login
-          </button>
-        )} */}
-
         {/* Mobile Menu Toggle (Hidden after xl) */}
         <div className="xl:hidden">
           <FaBars
@@ -273,9 +256,8 @@ const Navbar = () => {
           />
         </div>
       </div>
-      </div>{/* end border-b wrapper */}
 
-      {/* Network Bar */}
+      {/* Network Bar — sits directly below the main nav */}
       <NetworkBar />
 
       {/* Mobile Menu (Visible below xl) */}
