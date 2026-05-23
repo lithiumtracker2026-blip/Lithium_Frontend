@@ -10,6 +10,7 @@ import MoreNews from "@/components/News/MoreNews";
 import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
 import SEO from "@/components/SEO";
+import Head from "next/head";
 
 // const PressReleasePage = () => {
 //   const router = useRouter();
@@ -175,6 +176,24 @@ const PressReleasePage = () => {
         keywords="lithium press release, lithium company news, lithium industry announcements"
         canonicalUrl={`https://www.lithiumtracker.com/news/press-release/${id}`}
       />
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            headline: newsData.title,
+            description: newsData.content ? newsData.content.substring(0, 155) : "",
+            datePublished: newsData.date,
+            publisher: {
+              "@type": "Organization",
+              name: "Lithium Tracker",
+              logo: { "@type": "ImageObject", url: "https://www.lithiumtracker.com/Lithium_Tracker_logo.png" }
+            },
+            mainEntityOfPage: `https://www.lithiumtracker.com/news/press-release/${id}`
+          })}}
+        />
+      </Head>
 
       <Navbar />
       <div className="mt-[88px] w-full px-3 lg:px-20 py-8 lg:py-16 flex flex-col lg:flex-row lg:space-x-6">

@@ -457,6 +457,7 @@ const YearCalendar = ({ calendarData = [], selectedYear, setSelectedYear }) => {
                     <a
                       href={getValidHref(event?.url)}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center py-1 text-black/60 hover:text-accent text-[11px] md:text-[14px]"
                     >
                       View More

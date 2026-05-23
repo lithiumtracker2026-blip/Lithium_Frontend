@@ -63,7 +63,7 @@
 //         {/* Featured News Section */}
 //         {featuredNews && (
 //           <div className="col-span-5">
-//             <a href={featuredNews.url} target="_blank" className="block">
+//             <a href={featuredNews.url} target="_blank" rel="noopener noreferrer" className="block">
 //               <div className="overflow-hidden group cursor-pointer">
 //                 <img
 //                   src={featuredNews.image_url || "/no-image.png"}
@@ -252,7 +252,7 @@ const StockNews = () => {
         {/* Featured News Section */}
         {featuredNews && (
           <div className="col-span-5">
-            <a href={featuredNews.url} target="_blank" className="block">
+            <a href={featuredNews.url} target="_blank" rel="noopener noreferrer" className="block">
               <div className="overflow-hidden group cursor-pointer">
                 <img
                   src={featuredNews.image_url || "/no-image.png"}
@@ -304,6 +304,7 @@ const StockNews = () => {
               <a
                 href={news.url}
                 target="_blank"
+                rel="noopener noreferrer"
                 key={news.id || index}
                 className="flex items-center overflow-hidden group cursor-pointer border-b border-black/10 pb-2"
               >

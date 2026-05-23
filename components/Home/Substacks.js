@@ -126,6 +126,7 @@ const Substacks = () => {
             key={post.id}
             href={post.url}
             target="_blank"
+            rel="noopener noreferrer"
             className="flex items-start justify-between space-x-4 pb-4 cursor-pointer group border-b border-gray-100 last:border-b-0"
           >
             <div className="flex flex-col flex-grow">

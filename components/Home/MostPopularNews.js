@@ -83,6 +83,7 @@ const MostPopularNews = () => {
           <Link
             href={item.url}
             target="_blank"
+            rel="noopener noreferrer"
             key={item.id || index}
             className="flex items-center group w-full border-b border-gray-300 pb-7"
           >

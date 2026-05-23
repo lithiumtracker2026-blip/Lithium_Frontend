@@ -19,16 +19,59 @@ import HomeInsiderTransactions from "@/components/Home/HomeInsiderTransactions";
 import SEO from "@/components/SEO";
 import StocksMarquee from "@/components/Home/StocksMarquee";
 import MostFollowedStocksTable from "@/components/Home/MostFollowedStocksTable";
+import Head from "next/head";
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Lithium Tracker",
+  url: "https://www.lithiumtracker.com",
+  description: "Real-time lithium market news, prices, stock data, and investor tools.",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://www.lithiumtracker.com/news?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Lithium Prices, News & Market Data | Lithium Tracker",
+  url: "https://www.lithiumtracker.com/",
+  description: "Track live lithium carbonate (LCE), spodumene (SC6), and lithium hydroxide prices. Real-time charts, supply & demand data, insider transactions, and market news.",
+  publisher: {
+    "@type": "Organization",
+    name: "Lithium Tracker",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://www.lithiumtracker.com/Lithium_Tracker_logo.png",
+    },
+  },
+};
 
 const home = () => {
   return (
     <div className="bg-white min-h-screen w-full overflow-x-hidden">
       <SEO
-        title="Lithium Price Today: LCE, Spodumene & Hydroxide Charts | Lithium Tracker"
+        title="Lithium Prices, News & Market Data | Lithium Tracker"
         description="Track live lithium carbonate (LCE), spodumene (SC6), and lithium hydroxide prices. Real-time charts, supply & demand data, insider transactions, and market news."
         keywords="lithium price today, LCE price, spodumene price, lithium hydroxide price, lithium market, lithium tracker"
         canonicalUrl="https://www.lithiumtracker.com/"
       />
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+        />
+      </Head>
       <Navbar />
       <div className="pt-[88px] w-full">
         {/* Marquee Section */}

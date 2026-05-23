@@ -321,6 +321,7 @@ const PlainNews = () => {
               <a
                 key={news.id || index}
                 target="_blank"
+                rel="noopener noreferrer"
                 href={news.url}
                 className="bg-white pb-4 rounded-sm overflow-hidden block group transition-shadow duration-300"
               >
