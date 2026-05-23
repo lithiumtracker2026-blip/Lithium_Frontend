@@ -309,7 +309,7 @@ const Signup = () => {
       />
 
       <Navbar />
-      <main className="flex-grow mt-24">
+      <main className="flex-grow mt-[88px]">
         <div className="flex flex-col lg:flex-row h-[calc(100vh-4rem)]">
           <div className="relative w-full lg:w-1/2 h-full hidden lg:block">
             <img

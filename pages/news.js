@@ -21,7 +21,7 @@ const news = () => {
         canonicalUrl="https://www.lithiumtracker.com/news/"
       />
       <Navbar />
-      <div className="mt-28">
+      <div className="mt-[88px]">
         <Hero />
       </div>
 

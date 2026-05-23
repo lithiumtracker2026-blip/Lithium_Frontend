@@ -31,7 +31,7 @@ const home = () => {
         canonicalUrl="https://www.lithiumtracker.com/"
       />
       <Navbar />
-      <div className="pt-28 w-full">
+      <div className="pt-[88px] w-full">
         {/* Marquee Section */}
         <div className="mt-2 w-full">
           <StocksMarquee />
