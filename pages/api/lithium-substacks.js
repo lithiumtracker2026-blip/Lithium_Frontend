@@ -107,7 +107,7 @@ export default async function handler(req, res) {
       return new Date(b.date) - new Date(a.date);
     });
 
-    res.status(200).json(allPosts.slice(0, 7));
+    res.status(200).json(allPosts.slice(0, 4));
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
