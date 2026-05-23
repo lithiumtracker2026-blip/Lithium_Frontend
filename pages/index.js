@@ -15,6 +15,7 @@ import Footer from "@/components/Footer";
 import TVLithiumCFD from "@/components/Home/TVLithiumCFD";
 import TVLithium from "@/components/Home/TVLithium";
 import DirectHomeLithiumPrice from "@/components/Home/DirectHomeLithiumPrice";
+import LithiumSubstacks from "@/components/Home/LithiumSubstacks";
 import HomeInsiderTransactions from "@/components/Home/HomeInsiderTransactions";
 import SEO from "@/components/SEO";
 import StocksMarquee from "@/components/Home/StocksMarquee";
@@ -106,11 +107,9 @@ const home = () => {
                 </h1>
                 <TVLithium />
               </div>
-              
-              {/* <div className="border border-black/10 p-3 mr-2 rounded-xl">
-                <Substacks />
-              </div> */}
-              
+
+              <LithiumSubstacks />
+
               <DailyNewsletterAd />
               
               <PopularIntradayReturn />
