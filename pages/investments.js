@@ -161,7 +161,7 @@ const investments = ({ stockData }) => {
         
         <div className="mt-6">
           {currentTab === "snapshot" && (
-            <ISnapshot stockData={stockData} />
+            <ISnapshot />
           )}
           {currentTab === "stock-screener" && (
             <div className="py-5">

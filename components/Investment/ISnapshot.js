@@ -1,253 +1,66 @@
-"use client";
+import React, { useEffect, useRef, memo } from "react";
 
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import Loader from "@/components/Loader";
-import axios from "axios";
-import { MOST_FOLLOWED } from "@/src/api/lithiumAPI";
-import { LITHIUM_STOCK_DETAIL } from "@/src/api/lithiumAPI";
-
-const logos = [
-  { name: "New Age Metals Inc.", image: "/snapshotImgs/NAM-2.png" },
-  { name: "Ivanhoe Mines Ltd.", image: "/snapshotImgs/Ivanhoe.png" },
-  { name: "LifeZoom Metals Corp.", image: "/snapshotImgs/Lifezone.png" },
-  { name: "Magna Mining Inc.", image: "/snapshotImgs/MagnaMining.jpg" },
-  { name: "BRVO Bravo Mining Corp.", image: "/snapshotImgs/Bravo.png" },
-  {
-    name: "Canadian North Resources Inc.",
-    image: "/snapshotImgs/CanadianNorth.png",
-  },
-  {
-    name: "Generation Mining Ltd.",
-    image: "/snapshotImgs/GenerationMining.png",
-  },
-  { name: "Eastern Platinum Ltd.", image: "/snapshotImgs/EasternPlatinum.jpg" },
-  {
-    name: "Stillwater Critical Minerals Corp.",
-    image: "/snapshotImgs/Stillwater.jpg",
-  },
-  { name: "ValOre Metals Corp.", image: "/snapshotImgs/Valore.png" },
-  { name: "St-Georges Eco-Mining Corp.", image: "/snapshotImgs/StGeorge.jpg" },
-  { name: "GT Resources Ltd.", image: "/snapshotImgs/GT.png" },
-  {
-    name: "Copper and Lithium Alloys Ltd.",
-    image: "/snapshotImgs/PlatinumGroup.png",
-  },
-  { name: "Tanaka Chemical Corp.", image: "/snapshotImgs/TANAKA-P-METALS.png" },
-  { name: "Umicore SA", image: "/snapshotImgs/Umicore.png" },
-  { name: "Johnson Matthey Plc", image: "/snapshotImgs/JohnsonMatthey.png" },
-  {
-    name: "Sibanye Stillwater Ltd.",
-    image: "/snapshotImgs/SibanyeStillwater.png",
-  },
-  { name: "Impala Platinum Holdings Ltd.", image: "/snapshotImgs/Implats.png" },
-  { name: "Prospector Metals Corp.", image: "/snapshotImgs/Prospector.png" },
-  { name: "Clean Air Metals Inc.", image: "/snapshotImgs/CleanAir.jpg" },
+// Top lithium stocks & ETFs with confirmed TradingView symbols
+const LITHIUM_TICKERS = [
+  { symbol: "NYSE:ALB",   label: "Albemarle Corp" },
+  { symbol: "NYSE:SQM",   label: "SQM" },
+  { symbol: "NYSE:LAC",   label: "Lithium Americas" },
+  { symbol: "AMEX:LIT",   label: "Global X Lithium ETF" },
+  { symbol: "NYSE:PLL",   label: "Piedmont Lithium" },
+  { symbol: "NASDAQ:SGML",label: "Sigma Lithium" },
+  { symbol: "TSX:SLI",    label: "Standard Lithium" },
+  { symbol: "TSX:LI",     label: "Americas Lithium" },
+  { symbol: "ASX:PLS",    label: "Pilbara Minerals" },
+  { symbol: "TSX:CYP",    label: "Cypress Dev. Corp" },
+  { symbol: "NYSE:LTHM",  label: "Livent Corp" },
+  { symbol: "NASDAQ:FREY", label: "FREYR Battery" },
 ];
 
-const ISnapshot = ({ stockData = [] }) => {
-  const [stocksData, setStocksData] = useState([]);
-  const [error, setError] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
-  const router = useRouter();
-
-  console.log(MOST_FOLLOWED);
+// Single widget card — mounts the TradingView single-quote script
+const QuoteWidget = memo(({ symbol }) => {
+  const ref = useRef(null);
 
   useEffect(() => {
-    const fetchStocks = async () => {
-      try {
-        setIsLoading(true);
-        
-        // Try to fetch from external API first
-        try {
-          const response = await axios.get(MOST_FOLLOWED);
-          const apiData = response.data;
-          
-          // Check if data is grouped or flat
-          if (apiData.data) {
-            // Grouped data - flatten it
-            const allStocks = [
-              ...(apiData.data.most_watched || []),
-              ...(apiData.data.north_american_leaders || []),
-              ...(apiData.data.global_market_leaders || [])
-            ].slice(0, 12);
-            setStocksData(allStocks);
-          } else if (Array.isArray(apiData)) {
-            // Flat array
-            setStocksData(apiData.slice(0, 12));
-          } else {
-            throw new Error("Unexpected API response format");
-          }
-        } catch (apiError) {
-          console.log("External API not available, using local stock data");
-          
-          // Fallback to using passed stock data (first 12 stocks)
-          if (stockData && stockData.length > 0) {
-            const fallbackData = stockData.slice(0, 12).map(stock => ({
-              name: stock.company_name,
-              ticker: stock.ticker,
-              current_price: parseFloat(stock.last_price?.replace('$', '').replace(',', '') || '0'),
-              intraday_change: 0,
-              intraday_percentage: parseFloat(stock.intraday_percentage?.replace('%', '') || '0')
-            }));
-            setStocksData(fallbackData);
-          } else {
-            throw new Error("No stock data available");
-          }
-        }
-      } catch (err) {
-        console.error("Error fetching stock data:", err);
-        setError("Failed to fetch data. Please try again later.");
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchStocks();
-  }, [stockData]);
+    if (!ref.current) return;
+    ref.current.innerHTML = "";
 
-  const checkSubpageExists = async (stockTicker) => {
-    try {
-      const response = await axios.get(
-        `${LITHIUM_STOCK_DETAIL}?stock_ticker=${stockTicker}`
-      );
-      return response.data.exists ?? true;
-    } catch (error) {
-      console.error("Error checking subpage existence:", error);
-      return false;
-    }
-  };
+    const script = document.createElement("script");
+    script.src =
+      "https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js";
+    script.type = "text/javascript";
+    script.async = true;
+    script.innerHTML = JSON.stringify({
+      symbol,
+      colorTheme: "light",
+      isTransparent: false,
+      locale: "en",
+      width: "100%",
+    });
 
-  const handleStockClick = async (stockTicker) => {
-    setErrorMessage("");
-    const exists = await checkSubpageExists(stockTicker);
-
-    if (exists) {
-      router.push(`/stock-detail/${stockTicker}`);
-    } else {
-      setErrorMessage(`Details for ${stockTicker} are not available.`);
-      setIsModalOpen(true);
-    }
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setErrorMessage("");
-  };
+    ref.current.appendChild(script);
+  }, [symbol]);
 
   return (
-    <div className="px-3 md:px-12 py-5 md:py-5">
+    <div className="tradingview-widget-container bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+      <div ref={ref} className="tradingview-widget-container__widget" />
+    </div>
+  );
+});
+
+QuoteWidget.displayName = "QuoteWidget";
+
+const ISnapshot = () => {
+  return (
+    <div className="px-3 md:px-12 py-5">
       <h1 className="cambay text-[22px] sm:text-3xl font-semibold">Snapshot</h1>
+      <p className="text-sm text-gray-400 mt-1 mb-6">
+        Real-time quotes for major lithium stocks &amp; ETFs
+      </p>
 
-      <div className="mt-1 md:mt-5">
-        <div className="w-full rounded-md bg-secondary/10 p-4 md:p-7">
-          {isModalOpen && (
-            <div
-              className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 transition-colors"
-              onClick={closeModal}
-            >
-              <div
-                className="bg-white p-4 rounded shadow-md w-96"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <h2 className="text-lg font-bold mb-2">Error</h2>
-                <p className="text-sm mb-4">{errorMessage}</p>
-                <button
-                  className="px-3 py-1 text-sm bg-red-500 text-white rounded hover:bg-red-600"
-                  onClick={closeModal}
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          )}
-
-          {isLoading ? (
-            <div className="flex justify-center items-center ">
-              <Loader />
-            </div>
-          ) : error ? (
-            <p className="text-red-500">{error}</p>
-          ) : (
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-6 gap-2 md:gap-3">
-              {stocksData.length > 0 ? (
-                stocksData.map((stock, index) => (
-                  <div
-                    className="bg-white p-4 rounded-sm border border-date/10 flex flex-col items-center cursor-pointer hover:bg-gray-100 transition-colors"
-                    key={index}
-                    onClick={() => handleStockClick(stock.ticker.split(".")[0])}
-                  >
-                    {logos.map((logo, i) => {
-                      if (logo.name === stock.name) {
-                        return (
-                          <Image
-                            key={i}
-                            src={logo.image || "/placeholder.svg"}
-                            alt={logo.name}
-                            width={100}
-                            height={100}
-                            className={`h-8 w-auto mb-2 md:scale-[0.85] lg:scale-100 ${
-                              stock.name === "New Age Metals Inc."
-                                ? "scale-105"
-                                : ""
-                            } ${
-                              stock.name === "Eastern Platinum Ltd."
-                                ? " h-9 scale-150"
-                                : ""
-                            } 
-                            ${
-                              stock.name === "St-Georges Eco-Mining Corp."
-                                ? " h-9 scale-150"
-                                : ""
-                            } 
-                            ${
-                              stock.name === "Tanaka Chemical Corp."
-                                ? " h-9 scale-150"
-                                : ""
-                            } 
-                             `}
-                          />
-                        );
-                      }
-                      return null;
-                    })}
-
-                    <div className="flex flex-wrap justify-center items-center gap-x-4 font-semibold text-[12px] lg:text-[13.8px] mt-2 text-black1/90">
-                      <span className="inline-flex">
-                        ${stock.current_price?.toFixed(2) ?? "0.00"}
-                      </span>
-
-                      <span
-                        className={`inline-flex ${
-                          stock.intraday_change >= 0
-                            ? "text-green-500"
-                            : "text-red-500"
-                        }`}
-                      >
-                        ${stock.intraday_change?.toFixed(2) ?? "0.00"}
-                      </span>
-                      <span
-                        className={`inline-flex ${
-                          stock.intraday_percentage >= 0
-                            ? "text-green-500"
-                            : "text-red-500"
-                        }`}
-                      >
-                        {stock.intraday_percentage?.toFixed(2) ?? "0.00"}%
-                      </span>
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <p className="text-lightgray">
-                  No most-followed stocks available.
-                </p>
-              )}
-            </div>
-          )}
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+        {LITHIUM_TICKERS.map((t) => (
+          <QuoteWidget key={t.symbol} symbol={t.symbol} />
+        ))}
       </div>
     </div>
   );
