@@ -1,19 +1,17 @@
 import React, { useEffect, useRef, memo } from "react";
 
-// Top lithium stocks & ETFs with confirmed TradingView symbols
+// Top lithium stocks & ETFs — all confirmed on TradingView
 const LITHIUM_TICKERS = [
-  { symbol: "NYSE:ALB",   label: "Albemarle Corp" },
-  { symbol: "NYSE:SQM",   label: "SQM" },
-  { symbol: "NYSE:LAC",   label: "Lithium Americas" },
-  { symbol: "AMEX:LIT",   label: "Global X Lithium ETF" },
-  { symbol: "NYSE:PLL",   label: "Piedmont Lithium" },
-  { symbol: "NASDAQ:SGML",label: "Sigma Lithium" },
-  { symbol: "TSX:SLI",    label: "Standard Lithium" },
-  { symbol: "TSX:LI",     label: "Americas Lithium" },
-  { symbol: "ASX:PLS",    label: "Pilbara Minerals" },
-  { symbol: "TSX:CYP",    label: "Cypress Dev. Corp" },
-  { symbol: "NYSE:LTHM",  label: "Livent Corp" },
-  { symbol: "NASDAQ:FREY", label: "FREYR Battery" },
+  { symbol: "NYSE:ALB",     label: "Albemarle Corp" },
+  { symbol: "NYSE:SQM",     label: "SQM" },
+  { symbol: "NYSE:LAC",     label: "Lithium Americas" },
+  { symbol: "AMEX:LIT",     label: "Global X Lithium ETF" },
+  { symbol: "NASDAQ:PLL",   label: "Piedmont Lithium" },
+  { symbol: "NASDAQ:SGML",  label: "Sigma Lithium" },
+  { symbol: "AMEX:SLI",     label: "Standard Lithium" },
+  { symbol: "NASDAQ:ATLX",  label: "Atlas Lithium" },
+  { symbol: "ASX:PLS",      label: "Pilbara Minerals" },
+  { symbol: "NASDAQ:ILIT",  label: "iShares Lithium ETF" },
 ];
 
 // Single widget card — mounts the TradingView single-quote script
