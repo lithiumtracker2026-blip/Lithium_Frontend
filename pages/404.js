@@ -6,12 +6,13 @@ import SEO from "@/components/SEO";
 
 export default function Custom404() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen  text-black">
+    <div className="flex flex-col items-center justify-center min-h-screen text-black">
       <SEO
-        title="Page Not Found - Lithium Tracker"
-        description="Oops! The page you're looking for doesn’t exist. Get back on track with the latest Lithium and Lithium Alloys market updates and insights."
-        keywords="404, page not found, Lithium market, Lithium prices, Lithium tracker"
-        canonicalUrl="https://www.lithiumtracker.com/404"
+        title="Page Not Found — Lithium Tracker"
+        description="The page you're looking for doesn't exist. Head back to Lithium Tracker for live lithium prices, market data, and investment tools."
+        keywords="404, page not found, lithium tracker"
+        canonicalUrl="https://www.lithiumtracker.com/"
+        noIndex={true}
       />
       <motion.div
         initial={{ opacity: 0, y: -50 }}
@@ -21,8 +22,8 @@ export default function Custom404() {
       >
         <BsGraphDown className="text-accent text-6xl mb-4" />
         <h1 className="text-6xl font-extrabold mb-4">404</h1>
-        <p className="text-xl text-gray-300 mb-6">
-          Lost in the vault? This page doesn’t exist.
+        <p className="text-xl text-gray-500 mb-6">
+          This page doesn't exist.
         </p>
       </motion.div>
 
@@ -33,7 +34,7 @@ export default function Custom404() {
         className="flex flex-col items-center"
       >
         <p className="mb-4 text-gray-400">
-          Platinum prices don’t wait—head back to the dashboard!
+          Lithium prices don't wait — head back to the homepage!
         </p>
         <div className="flex items-center space-x-2 hover:bg-gray-100 hover:text-secondary transition-all duration-500 ease-in-out p-2 rounded">
           <AiOutlineStock className="text-accent text-4xl" />
@@ -53,7 +54,7 @@ export default function Custom404() {
       >
         <p>
           If you're stuck, contact us at{" "}
-          <span className="text-accent">info@platinumtracker.com</span>.
+          <span className="text-accent">info@lithiumtracker.com</span>.
         </p>
       </motion.div>
     </div>

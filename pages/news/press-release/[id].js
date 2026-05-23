@@ -170,10 +170,10 @@ const PressReleasePage = () => {
   return (
     <>
       <SEO
-        title="Press Release - Latest News & Updates"
-        description="Read the latest press releases and stay informed with important news and updates from the industry."
-        keywords="press release, latest news, industry updates, company announcements, financial news, market insights"
-        canonicalUrl="https://www.lithiumtracker.com/press-release"
+        title={newsData.title ? `${newsData.title} | Lithium Tracker` : "Press Release | Lithium Tracker"}
+        description={newsData.content ? newsData.content.substring(0, 155) : "Latest lithium industry press releases and company announcements on Lithium Tracker."}
+        keywords="lithium press release, lithium company news, lithium industry announcements"
+        canonicalUrl={`https://www.lithiumtracker.com/news/press-release/${id}`}
       />
 
       <Navbar />

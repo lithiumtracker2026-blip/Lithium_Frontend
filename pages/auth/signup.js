@@ -302,10 +302,11 @@ const Signup = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <SEO
-        title="Sign Up - Create Your Account"
-        description="Join us today! Create your account to access powerful tools, manage your watchlist, and stay updated with Copper market trends."
-        keywords="sign up, create account, registration, join now, stock market tools, investment platform, market trends,Copper Tracker"
+        title="Sign Up — Lithium Tracker"
+        description="Create your free Lithium Tracker account to manage your watchlist, run the stock screener, and stay ahead of the lithium market."
+        keywords="lithium tracker sign up, create account, lithium market tools"
         canonicalUrl="https://www.lithiumtracker.com/auth/signup"
+        noIndex={true}
       />
 
       <Navbar />

@@ -24,7 +24,7 @@ const Data = () => {
   return (
     <div className="bg-white min-h-screen">
       <SEO
-        title="Lithium Price Today: LCE, Spodumene & Hydroxide Charts & Data"
+        title="Lithium Market Data — LCE, Spodumene & Hydroxide Prices, Supply & Demand"
         description="Comprehensive lithium market data: LCE spot prices, spodumene (SC6) benchmarks, hydroxide pricing, supply & demand balances, refinery capacity, and inventory levels."
         keywords="lithium price data, LCE spot price, spodumene SC6 price, lithium hydroxide, lithium supply demand, lithium inventory, lithium market data"
         canonicalUrl="https://www.lithiumtracker.com/data"

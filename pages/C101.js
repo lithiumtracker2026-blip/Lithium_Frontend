@@ -30,9 +30,9 @@ const C101 = () => {
   return (
     <div className="bg-white min-h-screen">
       <SEO
-        title="Lithium 101 - Lithium Alloys Guide & Glossary"
-        description="Explore the world of Lithium and its alloys with our comprehensive guide. Learn about lithium, brass, bronze, aluminum bronze, nickel silver, and beryllium lithium, their properties, uses, and market significance."
-        keywords="Lithium 101, Lithium Alloys, lithium, brass, bronze, aluminum bronze, nickel silver, beryllium lithium, metal properties, lithium glossary, industrial metals"
+        title="Lithium 101 — Complete Guide to Lithium: Properties, Uses & Market"
+        description="Your complete guide to lithium: chemical properties, mining & extraction, battery applications, EV demand drivers, global supply chains, pricing, and long-term market outlook."
+        keywords="lithium 101, what is lithium, lithium properties, lithium mining, lithium battery, lithium carbonate, lithium hydroxide, lithium market guide, EV lithium demand"
         canonicalUrl="https://www.lithiumtracker.com/C101"
       />
       <Navbar />

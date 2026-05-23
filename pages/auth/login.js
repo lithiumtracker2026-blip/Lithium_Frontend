@@ -289,10 +289,11 @@ const Login = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <SEO
-        title="Login - Access Your Account"
-        description="Log in to your account to access powerful tools, manage your watchlist, and stay updated with market trends."
-        keywords="login, sign in, account access, user login, stock market tools, investment platform"
+        title="Login — Lithium Tracker"
+        description="Log in to your Lithium Tracker account to access your watchlist, stock screener, and personalized lithium market tools."
+        keywords="lithium tracker login, sign in, lithium market account"
         canonicalUrl="https://www.lithiumtracker.com/auth/login"
+        noIndex={true}
       />
 
       <Navbar />

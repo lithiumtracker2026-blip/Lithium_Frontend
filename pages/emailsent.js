@@ -10,10 +10,11 @@ const EmailSent = () => {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       <SEO
-        title="Email Sent - Confirmation & Next Steps"
-        description="Your email has been sent successfully. Check your inbox for confirmation and further instructions."
-        keywords="email sent, confirmation, inbox, message delivered, email success, verification email, next steps"
+        title="Email Sent — Lithium Tracker"
+        description="Your email has been sent successfully. Check your inbox for your Lithium Tracker verification link."
+        keywords="email sent, lithium tracker verification"
         canonicalUrl="https://www.lithiumtracker.com/emailsent"
+        noIndex={true}
       />
 
       <main className="flex-grow mt-16">

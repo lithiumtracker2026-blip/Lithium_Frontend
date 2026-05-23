@@ -39,10 +39,11 @@ const DashboardLayout = () => {
   return (
     <div className="h-screen w-full bg-gray-100 overflow-hidden">
       <SEO
-        title="Dashboard - Stock Screener, Watchlist, Market News & More"
-        description="Access a powerful stock screener, manage your watchlist, stay updated with market news, and analyze stock trends with our advanced dashboard."
-        keywords="dashboard, stock screener, watchlist, stock market, stock analysis, financial news, market trends, investment tools"
+        title="Dashboard — Lithium Tracker"
+        description="Manage your lithium stock watchlist, run the stock screener, and track your portfolio with the Lithium Tracker dashboard."
+        keywords="lithium tracker dashboard, lithium stock watchlist, lithium stock screener"
         canonicalUrl="https://www.lithiumtracker.com/dashboard"
+        noIndex={true}
       />
       <div className="flex h-full">
         {/* Mobile Sidebar Overlay */}

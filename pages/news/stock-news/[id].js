@@ -9,6 +9,7 @@ import PopularIntradayReturn from "@/components/Home/MostFollowed";
 import MoreNews from "@/components/News/MoreNews";
 import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
+import SEO from "@/components/SEO";
 
 const StockNewsPage = () => {
   const router = useRouter();
@@ -65,6 +66,13 @@ const StockNewsPage = () => {
 
   return (
     <>
+      <SEO
+        title={newsData.title ? `${newsData.title} | Lithium Tracker` : "Stock News | Lithium Tracker"}
+        description={newsData.content ? newsData.content.substring(0, 155) : "Latest lithium stock news and market updates on Lithium Tracker."}
+        keywords="lithium stock news, lithium market news, lithium investment news"
+        canonicalUrl={`https://www.lithiumtracker.com/news/stock-news/${id}`}
+        ogImage={newsData.image_url || undefined}
+      />
       <Navbar />
       <div className="mt-[88px] w-full flex justify-between px-3 md:px-20 py-8 md:py-16">
         {/* news  */}

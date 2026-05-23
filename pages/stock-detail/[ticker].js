@@ -255,10 +255,10 @@ const StockDetailPage = () => {
   return (
     <div>
       <SEO
-        title="Stock Details - Market Insights & Analysis"
-        description="Get in-depth stock details, real-time market data, historical performance, and expert analysis to make informed investment decisions."
-        keywords="stock details, market insights, stock analysis, stock performance, investment, financial data, stock trends"
-        canonicalUrl="https://www.lithiumtracker.com/stock-detail"
+        title={`${data[0].stock_name} (${data[0].stock_ticker}) — Stock Price, Analysis & Data | Lithium Tracker`}
+        description={`Get real-time stock data, charts, financials, and insider transactions for ${data[0].stock_name} (${data[0].stock_ticker}). Track this lithium stock on Lithium Tracker.`}
+        keywords={`${data[0].stock_name}, ${data[0].stock_ticker}, lithium stock, ${data[0].stock_exchange}, lithium investment, stock analysis`}
+        canonicalUrl={`https://www.lithiumtracker.com/stock-detail/${data[0].stock_ticker}`}
       />
       <Navbar />
       <div className="flex flex-col md:flex-row justify-between px-2 md:px-12 my-10 pb-20 mt-[88px]">
