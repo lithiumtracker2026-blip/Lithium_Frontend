@@ -35,7 +35,7 @@ const trackers = [
 
 const TrackerNetworkSection = () => {
   return (
-    <section className="w-full bg-[#0F1117] py-12 px-4">
+    <section style={{ backgroundColor: "#0F1117" }} className="w-full py-12 px-4">
       <div className="container mx-auto xl:px-10">
         {/* Header */}
         <p className="text-[11px] font-semibold tracking-widest text-accent uppercase mb-3">
@@ -44,7 +44,7 @@ const TrackerNetworkSection = () => {
         <h2 className="text-white text-2xl md:text-3xl font-bold mb-1">
           Explore our suite of real-time commodity trackers
         </h2>
-        <p className="text-white/40 text-sm mb-8">
+        <p className="text-gray-500 text-sm mb-8">
           Built for investors who move fast.
         </p>
 
@@ -56,15 +56,27 @@ const TrackerNetworkSection = () => {
               href={tracker.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col justify-between bg-white/[0.05] hover:bg-white/[0.09] border border-white/[0.08] hover:border-white/[0.18] rounded-xl p-4 transition-all duration-200 cursor-pointer"
+              className="group flex flex-col justify-between rounded-xl p-4 transition-all duration-200 cursor-pointer"
+              style={{
+                backgroundColor: "rgba(255,255,255,0.05)",
+                border: "1px solid rgba(255,255,255,0.08)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.09)";
+                e.currentTarget.style.border = "1px solid rgba(255,255,255,0.18)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.05)";
+                e.currentTarget.style.border = "1px solid rgba(255,255,255,0.08)";
+              }}
             >
               {/* Dot */}
               <span
-                className="w-2.5 h-2.5 rounded-full mb-4 shrink-0"
+                className="w-2.5 h-2.5 rounded-full mb-4 block"
                 style={{ backgroundColor: tracker.color }}
               />
 
-              {/* Name */}
+              {/* Name + link */}
               <div>
                 <p className="text-white text-[13px] font-medium leading-snug mb-2">
                   {tracker.name}
